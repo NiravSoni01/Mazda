@@ -27,7 +27,7 @@ public void firsttest() throws Throwable {
         driver.get("https://mazda.ca/en/");
       //  driver.manage().window().setSize(new Dimension(1920, 1080));
         driver.manage().window().setSize(new Dimension(1440, 900));
-        driver.manage().window().maximize();
+       // driver.manage().window().maximize();
 		
 		Thread.sleep(1000);
 		
