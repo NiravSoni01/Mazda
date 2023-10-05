@@ -21,10 +21,11 @@ public void firsttest() throws Throwable {
 
 	    driver.manage().deleteAllCookies();
 	    driver.navigate().refresh();
-	 //   driver.manage().window().setSize(new Dimension(1920, 1080));
+	// driver.manage().window().setSize(new Dimension(1920, 1080));
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 		
         driver.get("https://mazda.ca/en/");
+      //  driver.manage().window().setSize(new Dimension(1920, 1080));
         driver.manage().window().setSize(new Dimension(1440, 900));
        // driver.manage().window().maximize();
 		
@@ -45,8 +46,10 @@ public void firsttest() throws Throwable {
 		
 		// 4) Find local community legends cta and open it match page title and go back to homepage
 		
-		driver.findElement(By.xpath("//a[contains(@data-link-url,'/en/discover-mazda/welcome-to-mazda/local-community-legends/')]")).click();
-		
+
+		driver.findElement(By.xpath("//a[@data-link-url='/en/discover-mazda/welcome-to-mazda/local-community-legends/']")).click();
+		Thread.sleep(1000);
+
 		String Title = driver.getTitle();
 		
 		String expected = "Local Community Legends | 2022 | Mazda Canada";
