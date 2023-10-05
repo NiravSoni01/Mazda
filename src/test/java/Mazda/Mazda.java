@@ -45,7 +45,7 @@ public void firsttest() throws Throwable {
 		
 		// 4) Find local community legends cta and open it match page title and go back to homepage
 		
-		driver.findElement(By.xpath("//a[@data-link-url='/en/discover-mazda/welcome-to-mazda/local-community-legends/']")).click();
+		driver.findElement(By.xpath("//a[contains(@data-link-url,'/en/discover-mazda/welcome-to-mazda/local-community-legends/')]")).click();
 		
 		String Title = driver.getTitle();
 		
