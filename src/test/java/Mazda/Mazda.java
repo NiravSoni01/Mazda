@@ -46,8 +46,10 @@ public void firsttest() throws Throwable {
 		
 		// 4) Find local community legends cta and open it match page title and go back to homepage
 		
+
 		driver.findElement(By.xpath("//a[@data-link-url='/en/discover-mazda/welcome-to-mazda/local-community-legends/']")).click();
 		Thread.sleep(1000);
+
 		String Title = driver.getTitle();
 		
 		String expected = "Local Community Legends | 2022 | Mazda Canada";
