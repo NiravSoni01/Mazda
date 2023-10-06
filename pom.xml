@@ -40,8 +40,12 @@
   
   <type>pom</type>
 </dependency>
-
-
+<!-- https://mvnrepository.com/artifact/com.jsexecutor/jsexecutor-core -->
+<dependency>
+    <groupId>com.jsexecutor</groupId>
+    <artifactId>jsexecutor-core</artifactId>
+    <version>1.0.5</version>
+</dependency>
    </dependencies>
  
    
@@ -54,6 +58,8 @@
    			
    			   <configuration>
 					  <testFailureIgnore>true</testFailureIgnore>
+					  
+					  
 
           <suiteXmlFiles>
             <suiteXmlFile>testng.xml</suiteXmlFile>

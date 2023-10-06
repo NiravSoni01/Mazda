@@ -8,7 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
-
+import org.openqa.selenium.JavascriptExecutor;
 public class Mazda {
 @Test	
 public void firsttest() throws Throwable {
@@ -125,9 +125,12 @@ public void firsttest() throws Throwable {
 		
 		Thread.sleep(1000);
 		
-		driver.findElement(By.xpath("//div[@id='mz-cards-listing-features-modal-REFLECTING2']//button[contains(@aria-label,'Close')]"));
-		driver.findElement(By.xpath("//div[@id='mz-cards-listing-features-modal-REFLECTING2']//i[contains(@class,'mz-svg mz-svg--grey 0 mz-svg-x')]")).click();
+		//driver.findElement(By.xpath("//div[@id='mz-cards-listing-features-modal-REFLECTING2']//button[contains(@aria-label,'Close')]"));
+		WebElement elem = driver.findElement(By.xpath("//div[@id='mz-cards-listing-features-modal-REFLECTING2']//i[contains(@class,'mz-svg mz-svg--grey 0 mz-svg-x')]"));
 
+		JavascriptExecutor executor = (JavascriptExecutor) driver;
+		executor.executeScript("arguments[0].click();", elem);
+		
 		// 7) Open B&P for CX-5
 		
 		driver.findElement(By.xpath("//a[@class='mz-btn mz-btn--secondary']//span[contains(text(),'BUILD YOURS')]")).click();
