@@ -133,7 +133,9 @@ public void firsttest() throws Throwable {
 		
 		// 7) Open B&P for CX-5
 		
-		driver.findElement(By.xpath("//a[@class='mz-btn mz-btn--secondary']//span[contains(text(),'BUILD YOURS')]")).click();
+        WebElement elem = driver.findElement(By.xpath("//a[@class='mz-btn mz-btn--secondary']//span[contains(text(),'BUILD YOURS')]"));
+        JavascriptExecutor executor = (JavascriptExecutor) driver;
+		executor.executeScript("arguments[0].click();", elem);
 		
 		driver.findElement(By.xpath("//div[@class='mz-full-width mz-trims-page__content general-content']//div[3]//div[1]//button[1]")).click();
 		
