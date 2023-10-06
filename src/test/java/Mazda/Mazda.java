@@ -123,7 +123,7 @@ public void firsttest() throws Throwable {
 		
 		System.out.println("Card is opening and able to slide:" +card.isDisplayed());
 		
-		driver.findElement(By.xpath("//div[@id='mz-cards-listing-features-modal-REFLECTING2']//i[@class='mz-svg mz-svg--grey 0 mz-svg-x']")).click();
+		driver.findElement(By.xpath("//div[@id='mz-cards-listing-features-modal-REFLECTING2']//div[contains(@class,'mz-svg-wrapper')]")).click();
 
 		// 7) Open B&P for CX-5
 		
