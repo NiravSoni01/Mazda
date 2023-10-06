@@ -125,7 +125,8 @@ public void firsttest() throws Throwable {
 		
 		Thread.sleep(1000);
 		
-		driver.findElement(By.xpath("//div[@id='mz-cards-listing-features-modal-REFLECTING2']//div[contains(@class,'mz-svg-wrapper')]")).click();
+		driver.findElement(By.xpath("//div[@id='mz-cards-listing-features-modal-REFLECTING2']//button[contains(@aria-label,'Close')]"));
+		driver.findElement(By.xpath("//div[@id='mz-cards-listing-features-modal-REFLECTING2']//i[contains(@class,'mz-svg mz-svg--grey 0 mz-svg-x')]")).click();
 
 		// 7) Open B&P for CX-5
 		
