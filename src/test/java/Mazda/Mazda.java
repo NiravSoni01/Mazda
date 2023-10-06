@@ -115,21 +115,21 @@ public void firsttest() throws Throwable {
 		
 		driver.get("https://www.mazda.ca/en/vehicles/cx-5/");
 		
-		driver.findElement(By.xpath("//div[@id='REFLECTING2']//li[@class='glide__slide mz-image glide__slide--active']//div[@class='mz-card mz-card-feature']")).click();
-		
-		driver.findElement(By.xpath("//div[@class='mz-carousel glide mz-carousel--contain mz-carousel--light glide--swipeable mounted glide--ltr glide--slider']//i[@class='mz-svg mz-svg--grey mz-svg-chevroncarousel']")).click();
-		
-		WebElement card = driver.findElement(By.xpath("//div[@class='mz-carousel glide mz-carousel--contain mz-carousel--light glide--swipeable mounted glide--ltr glide--slider']//li[@class='glide__slide mz-image glide__slide--active']"));
-		
-		System.out.println("Card is opening and able to slide:" +card.isDisplayed());
-		
-		Thread.sleep(1000);
-		
-		//driver.findElement(By.xpath("//div[@id='mz-cards-listing-features-modal-REFLECTING2']//button[contains(@aria-label,'Close')]"));
-		WebElement elem = driver.findElement(By.xpath("//div[@id='mz-cards-listing-features-modal-REFLECTING2']//i[contains(@class,'mz-svg mz-svg--grey 0 mz-svg-x')]"));
-
-		JavascriptExecutor executor = (JavascriptExecutor) driver;
-		executor.executeScript("arguments[0].click();", elem);
+//		driver.findElement(By.xpath("//div[@id='REFLECTING2']//li[@class='glide__slide mz-image glide__slide--active']//div[@class='mz-card mz-card-feature']")).click();
+//		
+//		driver.findElement(By.xpath("//div[@class='mz-carousel glide mz-carousel--contain mz-carousel--light glide--swipeable mounted glide--ltr glide--slider']//i[@class='mz-svg mz-svg--grey mz-svg-chevroncarousel']")).click();
+//		
+//		WebElement card = driver.findElement(By.xpath("//div[@class='mz-carousel glide mz-carousel--contain mz-carousel--light glide--swipeable mounted glide--ltr glide--slider']//li[@class='glide__slide mz-image glide__slide--active']"));
+//		
+//		System.out.println("Card is opening and able to slide:" +card.isDisplayed());
+//		
+//		Thread.sleep(1000);
+//		
+//		//driver.findElement(By.xpath("//div[@id='mz-cards-listing-features-modal-REFLECTING2']//button[contains(@aria-label,'Close')]"));
+//		WebElement elem = driver.findElement(By.xpath("//div[@id='mz-cards-listing-features-modal-REFLECTING2']//i[contains(@class,'mz-svg mz-svg--grey 0 mz-svg-x')]"));
+//
+//		JavascriptExecutor executor = (JavascriptExecutor) driver;
+//		executor.executeScript("arguments[0].click();", elem);
 		
 		// 7) Open B&P for CX-5
 		
