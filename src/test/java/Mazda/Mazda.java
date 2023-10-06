@@ -46,7 +46,7 @@ public void firsttest() throws Throwable {
 		
 		// 4) Find local community legends cta and open it match page title and go back to homepage
 		
-		driver.findElement(By.xpath("//a[@data-link-url='/en/discover-mazda/welcome-to-mazda/local-community-legends/']")).click();
+		driver.findElement(By.xpath("//span[normalize-space()='See how we said thank you']")).click();
 		Thread.sleep(1000);
 		String Title = driver.getTitle();
 		
@@ -136,6 +136,8 @@ public void firsttest() throws Throwable {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 		
 		Thread.sleep(1000);
+		
+		driver.manage().window().setSize(new Dimension(1920, 1080));
 		
 		driver.findElement(By.xpath("//button[@class='mz-btn mz-btn--primary mz-btn--red']//span[@class='mz-link-icon-positon--right'][normalize-space()='Next: Engine']")).click();
 		
