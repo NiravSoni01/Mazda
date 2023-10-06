@@ -123,7 +123,7 @@ public void firsttest() throws Throwable {
 //		
 //		System.out.println("Card is opening and able to slide:" +card.isDisplayed());
 //		
-//		Thread.sleep(1000);
+        Thread.sleep(3000);
 //		
 //		//driver.findElement(By.xpath("//div[@id='mz-cards-listing-features-modal-REFLECTING2']//button[contains(@aria-label,'Close')]"));
 //		WebElement elem = driver.findElement(By.xpath("//div[@id='mz-cards-listing-features-modal-REFLECTING2']//i[contains(@class,'mz-svg mz-svg--grey 0 mz-svg-x')]"));
