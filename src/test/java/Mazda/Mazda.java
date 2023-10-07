@@ -46,7 +46,10 @@ public void firsttest() throws Throwable {
 		
 		// 4) Find local community legends cta and open it match page title and go back to homepage
 		
-		driver.findElement(By.xpath("//span[normalize-space()='See how we said thank you']")).click();
+		WebElement elemA = driver.findElement(By.xpath("//span[normalize-space()='See how we said thank you']"));
+		JavascriptExecutor executorA = (JavascriptExecutor) driver;
+		executorA.executeScript("arguments[0].click();", elemA);
+		
 		Thread.sleep(1000);
 		String Title = driver.getTitle();
 		
