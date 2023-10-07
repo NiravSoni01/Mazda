@@ -137,8 +137,9 @@ public void firsttest() throws Throwable {
 		executor1.executeScript("arguments[0].click();", elem1);
 		System.out.println("its clicking");
 		
-		driver.findElement(By.xpath("//div[@class='mz-full-width mz-trims-page__content general-content']//div[3]//div[1]//button[1]")).click();
-		
+		WebElement elem0 = driver.findElement(By.xpath("//div[@class='mz-full-width mz-trims-page__content general-content']//div[3]//div[1]//button[1]"));
+		JavascriptExecutor executor0 = (JavascriptExecutor) driver;
+		executor0.executeScript("arguments[0].click();", elem0);
 		// 8) Selecting build and comparing prices
 		
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
