@@ -115,27 +115,26 @@ public void firsttest() throws Throwable {
 		
 		driver.get("https://www.mazda.ca/en/vehicles/cx-5/");
 		
-//		driver.findElement(By.xpath("//div[@id='REFLECTING2']//li[@class='glide__slide mz-image glide__slide--active']//div[@class='mz-card mz-card-feature']")).click();
-//		
-//		driver.findElement(By.xpath("//div[@class='mz-carousel glide mz-carousel--contain mz-carousel--light glide--swipeable mounted glide--ltr glide--slider']//i[@class='mz-svg mz-svg--grey mz-svg-chevroncarousel']")).click();
-//		
-//		WebElement card = driver.findElement(By.xpath("//div[@class='mz-carousel glide mz-carousel--contain mz-carousel--light glide--swipeable mounted glide--ltr glide--slider']//li[@class='glide__slide mz-image glide__slide--active']"));
-//		
-//		System.out.println("Card is opening and able to slide:" +card.isDisplayed());
-//		
+		driver.findElement(By.xpath("//div[@id='REFLECTING2']//li[@class='glide__slide mz-image glide__slide--active']//div[@class='mz-card mz-card-feature']")).click();
+		
+		driver.findElement(By.xpath("//div[@class='mz-carousel glide mz-carousel--contain mz-carousel--light glide--swipeable mounted glide--ltr glide--slider']//i[@class='mz-svg mz-svg--grey mz-svg-chevroncarousel']")).click();
+		
+		WebElement card = driver.findElement(By.xpath("//div[@class='mz-carousel glide mz-carousel--contain mz-carousel--light glide--swipeable mounted glide--ltr glide--slider']//li[@class='glide__slide mz-image glide__slide--active']"));
+		
+		System.out.println("Card is opening and able to slide:" +card.isDisplayed());
+		
         Thread.sleep(3000);
-//		
-//		//driver.findElement(By.xpath("//div[@id='mz-cards-listing-features-modal-REFLECTING2']//button[contains(@aria-label,'Close')]"));
-//		WebElement elem = driver.findElement(By.xpath("//div[@id='mz-cards-listing-features-modal-REFLECTING2']//i[contains(@class,'mz-svg mz-svg--grey 0 mz-svg-x')]"));
-//
-//		JavascriptExecutor executor = (JavascriptExecutor) driver;
-//		executor.executeScript("arguments[0].click();", elem);
+		
+		driver.findElement(By.xpath("//div[@id='mz-cards-listing-features-modal-REFLECTING2']//button[contains(@aria-label,'Close')]"));
+		WebElement elem = driver.findElement(By.xpath("//div[@id='mz-cards-listing-features-modal-REFLECTING2']//i[contains(@class,'mz-svg mz-svg--grey 0 mz-svg-x')]"));
+		JavascriptExecutor executor = (JavascriptExecutor) driver;
+		executor.executeScript("arguments[0].click();", elem);
 		
 		// 7) Open B&P for CX-5
 		
-        WebElement elem = driver.findElement(By.xpath("//a[@class='mz-btn mz-btn--secondary']//span[contains(text(),'BUILD YOURS')]"));
-        JavascriptExecutor executor = (JavascriptExecutor) driver;
-		executor.executeScript("arguments[0].click();", elem);
+        WebElement elem1 = driver.findElement(By.xpath("//a[@class='mz-btn mz-btn--secondary']//span[contains(text(),'BUILD YOURS')]"));
+        JavascriptExecutor executor1 = (JavascriptExecutor) driver;
+		executor1.executeScript("arguments[0].click();", elem1);
 		System.out.println("its clicking");
 		
 		driver.findElement(By.xpath("//div[@class='mz-full-width mz-trims-page__content general-content']//div[3]//div[1]//button[1]")).click();
@@ -148,24 +147,57 @@ public void firsttest() throws Throwable {
 		
 		driver.manage().window().setSize(new Dimension(1920, 1080));
 		
-		driver.findElement(By.xpath("//button[@class='mz-btn mz-btn--primary mz-btn--red']//span[@class='mz-link-icon-positon--right'][normalize-space()='Next: Engine']")).click();
-		
+		WebElement elem2 = driver.findElement(By.xpath("//button[@class='mz-btn mz-btn--primary mz-btn--red']//span[@class='mz-link-icon-positon--right'][normalize-space()='Next: Engine']"));
+		 JavascriptExecutor executor2 = (JavascriptExecutor) driver;
+			executor2.executeScript("arguments[0].click();", elem2);
+			
 		Thread.sleep(1000);
 		
-		driver.findElement(By.xpath("//button[@class='mz-btn mz-btn--primary mz-btn--red']//span[@class='mz-link-icon-positon--right'][normalize-space()='Next: Package']")).click();
-		driver.findElement(By.xpath("//div[@class='mz-package-page__content-right right-container']//div[2]//div[3]//button[1]")).click();
-		Thread.sleep(1000);
-		driver.findElement(By.xpath("//button[@class='mz-btn mz-btn--primary mz-btn--red']//span[@class='mz-link-icon-positon--right'][normalize-space()='Next: Colour']")).click();
-		Thread.sleep(1000);
-		driver.findElement(By.xpath("//body/div[@id='root']/div[@class='App mzBuildandPrice']/div[@class='App-container']/div[@class='mz-colours-page mz-top-nav-spacing grid-no-gutter-sm']/div[@class='mz-full-width mz-colours-page__content general-content']/div[@class='mz-colours-page__content-right right-container']/div[@class='mz-colours-page__package-card-list right-container']/div[@class='mz-colours-page__package-card-list-container']/button[3]/span[1]/span[1]")).click();
-		Thread.sleep(1000);
-		driver.findElement(By.xpath("//button[@class='mz-btn mz-btn--primary mz-btn--red']//span[@class='mz-link-icon-positon--right'][normalize-space()='Next: Wheels']")).click();
-		Thread.sleep(1000);
-		driver.findElement(By.xpath("//body/div[@id='root']/div[@class='App mzBuildandPrice']/div[@class='App-container']/div[@class='mz-wheels-page mz-top-nav-spacing']/div[@class='mz-full-width mz-wheels-page__content general-content']/div[@class='mz-wheels-page__content-right right-container']/div[@class='mz-wheels-page__wheels-card-list']/div[@class='wheels-list']/div[@class='wheels-list__tab-content']/button[1]/span[1]")).click();
-		Thread.sleep(1000);
-		driver.findElement(By.xpath("//button[@class='mz-btn mz-btn--primary mz-btn--red']//span[@class='mz-link-icon-positon--right'][normalize-space()='Next: Accessories']")).click();
 		
-		driver.findElement(By.xpath("//button[@class='mz-btn mz-btn--primary mz-btn--red']//span[@class='mz-link-icon-positon--right'][normalize-space()='Next: Payments']")).click();
+		WebElement elem3 = driver.findElement(By.xpath("//button[@class='mz-btn mz-btn--primary mz-btn--red']//span[@class='mz-link-icon-positon--right'][normalize-space()='Next: Package']"));
+		JavascriptExecutor executor3 = (JavascriptExecutor) driver;
+		executor3.executeScript("arguments[0].click();", elem3);
+		
+		
+		WebElement elem4 = driver.findElement(By.xpath("//div[@class='mz-package-page__content-right right-container']//div[2]//div[3]//button[1]"));
+		JavascriptExecutor executor4 = (JavascriptExecutor) driver;
+		executor4.executeScript("arguments[0].click();", elem4);
+	
+		
+		Thread.sleep(1000);
+		WebElement elem5 = driver.findElement(By.xpath("//button[@class='mz-btn mz-btn--primary mz-btn--red']//span[@class='mz-link-icon-positon--right'][normalize-space()='Next: Colour']"));
+		JavascriptExecutor executor5 = (JavascriptExecutor) driver;
+		executor5.executeScript("arguments[0].click();", elem5);
+		
+		
+		Thread.sleep(1000);
+		WebElement elem6 = driver.findElement(By.xpath("//body/div[@id='root']/div[@class='App mzBuildandPrice']/div[@class='App-container']/div[@class='mz-colours-page mz-top-nav-spacing grid-no-gutter-sm']/div[@class='mz-full-width mz-colours-page__content general-content']/div[@class='mz-colours-page__content-right right-container']/div[@class='mz-colours-page__package-card-list right-container']/div[@class='mz-colours-page__package-card-list-container']/button[3]/span[1]/span[1]"));
+		JavascriptExecutor executor6 = (JavascriptExecutor) driver;
+		executor6.executeScript("arguments[0].click();", elem6);
+		
+		
+		Thread.sleep(1000);
+		WebElement elem7 = driver.findElement(By.xpath("//button[@class='mz-btn mz-btn--primary mz-btn--red']//span[@class='mz-link-icon-positon--right'][normalize-space()='Next: Wheels']"));
+		JavascriptExecutor executor7 = (JavascriptExecutor) driver;
+		executor7.executeScript("arguments[0].click();", elem7);
+		
+		
+		Thread.sleep(1000);
+		WebElement elem8 = driver.findElement(By.xpath("//body/div[@id='root']/div[@class='App mzBuildandPrice']/div[@class='App-container']/div[@class='mz-wheels-page mz-top-nav-spacing']/div[@class='mz-full-width mz-wheels-page__content general-content']/div[@class='mz-wheels-page__content-right right-container']/div[@class='mz-wheels-page__wheels-card-list']/div[@class='wheels-list']/div[@class='wheels-list__tab-content']/button[1]/span[1]"));
+		JavascriptExecutor executor8 = (JavascriptExecutor) driver;
+		executor8.executeScript("arguments[0].click();", elem8);
+		
+		
+		
+		Thread.sleep(1000);
+		WebElement elem9 = driver.findElement(By.xpath("//button[@class='mz-btn mz-btn--primary mz-btn--red']//span[@class='mz-link-icon-positon--right'][normalize-space()='Next: Accessories']"));
+		JavascriptExecutor executor9 = (JavascriptExecutor) driver;
+		executor9.executeScript("arguments[0].click();", elem9);
+		
+		WebElement elem10 = driver.findElement(By.xpath("//button[@class='mz-btn mz-btn--primary mz-btn--red']//span[@class='mz-link-icon-positon--right'][normalize-space()='Next: Payments']"));
+		JavascriptExecutor executor10 = (JavascriptExecutor) driver;
+		executor10.executeScript("arguments[0].click();", elem10);
+		
 		
 		//9) Comparing cash, finance and lease prices
 		
