@@ -25,8 +25,7 @@ public void firsttest() throws Throwable {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 		
         driver.get("https://mazda.ca/en/");
-      // driver.manage().window().setSize(new Dimension(1920, 1080));
-        //driver.manage().window().setSize(new Dimension(1440, 900));
+      
        driver.manage().window().maximize();
 		
 		Thread.sleep(1000);
@@ -138,11 +137,12 @@ public void firsttest() throws Throwable {
         WebElement elem1 = driver.findElement(By.xpath("//a[@class='mz-btn mz-btn--secondary']//span[contains(text(),'BUILD YOURS')]"));
         JavascriptExecutor executor1 = (JavascriptExecutor) driver;
 		executor1.executeScript("arguments[0].click();", elem1);
-		System.out.println("its clicking");
+		System.out.println("Opening B&P");
 		
 		WebElement elem0 = driver.findElement(By.xpath("//div[@class='mz-full-width mz-trims-page__content general-content']//div[3]//div[1]//button[1]"));
 		JavascriptExecutor executor0 = (JavascriptExecutor) driver;
 		executor0.executeScript("arguments[0].click();", elem0);
+		
 		// 8) Selecting build and comparing prices
 		
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
@@ -152,8 +152,8 @@ public void firsttest() throws Throwable {
 		driver.manage().window().setSize(new Dimension(1920, 1080));
 		
 		WebElement elem2 = driver.findElement(By.xpath("//button[@class='mz-btn mz-btn--primary mz-btn--red']//span[@class='mz-link-icon-positon--right'][normalize-space()='Next: Engine']"));
-		 JavascriptExecutor executor2 = (JavascriptExecutor) driver;
-			executor2.executeScript("arguments[0].click();", elem2);
+		JavascriptExecutor executor2 = (JavascriptExecutor) driver;
+		executor2.executeScript("arguments[0].click();", elem2);
 			
 		Thread.sleep(1000);
 		
@@ -219,305 +219,309 @@ public void firsttest() throws Throwable {
 		
 		WebElement elem11 = driver.findElement(By.xpath("//div[@class='mz-price-payment__loyalty']//div[@class='mz-price-payment__checkbox']"));
 		JavascriptExecutor executor11 = (JavascriptExecutor) driver;
-		executor10.executeScript("arguments[0].click();", elem11);
+		executor11.executeScript("arguments[0].click();", elem11);
 		
-		WebElement balance = driver.findElement(By.xpath("//span[normalize-space()='$41,286.61']"));
+		WebElement balance = driver.findElement(By.xpath("//span[normalize-space()='$41,662.50']"));
 		
 		String finanacebalance = balance.getText();
 		
-		String expectedbalance = "$41,286.61";
+		String expectedbalance = "$41,662.50";
 		
 		System.out.println("Prices are matching for balance:" +finanacebalance.equalsIgnoreCase(expectedbalance));
 		
-	    WebElement lease = driver.findElement(By.xpath("//span[normalize-space()='$41,850.95']"));
+	    WebElement lease = driver.findElement(By.xpath("//span[normalize-space()='$42,350.95']"));
 	    
 	    String actualease = lease.getText();
 	    
-	    String expectedlease = "$41,850.95";
+	    String expectedlease = "$42,350.95";
 	    
 	    System.out.println("Prices are matching for lease:" +actualease.equalsIgnoreCase(expectedlease));
 	    
-	    driver.close();
+	    driver.close();}
+}
 	    
-	    // 10) Open driver again to change province and lan
-	    
-        WebDriver driver2=new ChromeDriver();
-		
-
-	    driver2.manage().deleteAllCookies();
-	    driver2.navigate().refresh();
-		driver2.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-		
-        driver2.get("https://mazda.ca/en/");
-       // driver.manage().window().setSize(new Dimension(1440, 900));
-        driver2.manage().window().maximize();
-	    
-	    
-	    
-	   // 10) Open Mazda 3 garage change provinace and language 
-	   
-	    driver2.get("https://www.mazda.ca/en/vehicles/mazda3-sport/");
-	    
-	    WebElement elem12 = driver2.findElement(By.xpath("//a[@class='mz-btn mz-btn--primary mz-btn--white']"));
-	    JavascriptExecutor executor12 = (JavascriptExecutor) driver;
-		executor10.executeScript("arguments[0].click();", elem12);
-	    
-		WebElement elem13 = driver2.findElement(By.xpath("//select[@name='province']"));
-	    JavascriptExecutor executor13 = (JavascriptExecutor) driver;
-		executor10.executeScript("arguments[0].click();", elem13);
-	    
-		WebElement elem14 = driver2.findElement(By.xpath("//option[normalize-space()='QC']"));
-	    JavascriptExecutor executor14 = (JavascriptExecutor) driver;
-		executor10.executeScript("arguments[0].click();", elem14);
-	    
-		WebElement elem15 = driver2.findElement(By.xpath("//a[normalize-space()='fr']"));
-	    JavascriptExecutor executor15 = (JavascriptExecutor) driver;
-		executor10.executeScript("arguments[0].click();", elem15);
-	    
-	    WebElement alert = driver2.findElement(By.xpath("//a[@class='mz-btn mz-btn--primary mz-btn--white']"));
-	    
-	    try {alert.click();
-	    }
-	    catch (Exception a) {
-	    	throw (a); }
-	    
-	   
-	    	
-	    
-	    WebElement elem16 = driver2.findElement(By.xpath("//body/div/div/div/div[1]/a[2]"));
-	    JavascriptExecutor executor16 = (JavascriptExecutor) driver;
-		executor10.executeScript("arguments[0].click();", elem16);
-	    
-		WebElement elem17 = driver2.findElement(By.xpath("//div[@class='mz-container-flex active']//button[3]"));
-	    JavascriptExecutor executor17 = (JavascriptExecutor) driver;
-		executor10.executeScript("arguments[0].click();", elem17);
-	    
-	    // 11) Open B&P with selected province and fr 
-	    
-		WebElement elem18 = driver2.findElement(By.xpath("//div[@class='mz-container-flex active']//a[@class='mz-btn mz-btn--primary mz-btn--red mz-360-color-pickers__cta']"));
-	    JavascriptExecutor executor18 = (JavascriptExecutor) driver;
-		executor10.executeScript("arguments[0].click();", elem18);
-	    Thread.sleep(1000);
-	    
- WebElement alert2 = driver2.findElement(By.xpath("//a[@class='mz-btn mz-btn--primary mz-btn--white']"));
-	    
-	    try {alert2.click();
-	    }
-	    catch (Exception a) {
-	    	throw (a); }
-	    
-	    Thread.sleep(2000);
-	    WebElement elem19 = driver2.findElement(By.xpath("//div[@class='mz-package-page__content-right right-container']//div[2]//div[3]//button[1]"));
-	    JavascriptExecutor executor19 = (JavascriptExecutor) driver;
-		executor10.executeScript("arguments[0].click();", elem19);
-		
-        Thread.sleep(2000);
-        WebElement elem20 = driver2.findElement(By.xpath("//div[@class='mz-pricing__container']//button[@type='button']"));
-        JavascriptExecutor executor20 = (JavascriptExecutor) driver;
-		executor10.executeScript("arguments[0].click();", elem20);
-		
-        Thread.sleep(1000);
-        WebElement elem21 = driver2.findElement(By.xpath("//div[@class='mz-pricing__container']//button[@type='button']"));
-        JavascriptExecutor executor21 = (JavascriptExecutor) driver;
-		executor10.executeScript("arguments[0].click();", elem21);
-		
-        Thread.sleep(1000);
-        WebElement elem22 = driver2.findElement(By.xpath("//div[@class='mz-pricing__container']//button[@type='button']"));
-        JavascriptExecutor executor22 = (JavascriptExecutor) driver;
-		executor10.executeScript("arguments[0].click();", elem22);
-		
-        Thread.sleep(1000);
-        WebElement elem23 = driver2.findElement(By.xpath("//div[@class='mz-pricing__container']//button[@type='button']"));
-        JavascriptExecutor executor23 = (JavascriptExecutor) driver;
-		executor10.executeScript("arguments[0].click();", elem23);
-        
-        WebElement Frprice = driver2.findElement(By.xpath(("//span[@class='mmz-cahs-options__price'][normalize-space()='29 992,50 $']")));
-        
-        String actualfrprice = Frprice.getText();
-       // System.out.println("Prices" +actualfrprice);
-	    String expectedfrprice = "29 992,50 $";
-	    
-	    System.out.println("Prices are matching for FR balance:" +actualfrprice.equalsIgnoreCase(expectedfrprice));
-	   
-	    
-	    driver2.close();
-	  }
-	    
-	   // driver2.findElement(By.xpath("(//button)[3]")).click();
-	    
-//	    driver2.findElement(By.xpath("//div[@class='mz-package-page__content-right right-container']//div[2]//div[3]//button[1]")).click();
+//	    // 10) Open driver again to change province and lan
+//	    
+//        WebDriver driver2=new ChromeDriver();
+//		
+//
+//	    driver2.manage().deleteAllCookies();
+//	    driver2.navigate().refresh();
+//		driver2.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+//		
+//        driver2.get("https://mazda.ca/en/");
+//       // driver.manage().window().setSize(new Dimension(1440, 900));
+//        driver2.manage().window().maximize();
+//	    
+//	    
+//	    
+//	   // 10) Open Mazda 3 sport garage change provinace and language 
+//	   
+//	    driver2.get("https://www.mazda.ca/en/vehicles/mazda3-sport/");
+//	    
+//	    WebElement elem12 = driver2.findElement(By.xpath("//a[@class='mz-btn mz-btn--primary mz-btn--white']"));
+//	    try {elem12.click();
+//	    }
+//	    catch (Exception a) {
+//	    	throw (a); }
+////	    JavascriptExecutor executor12 = (JavascriptExecutor) driver2;
+////		executor12.executeScript("arguments[0].click();", elem12);
+//	    
+//		WebElement elem13 = driver2.findElement(By.xpath("//select[@name='province']"));
+//	    JavascriptExecutor executor13 = (JavascriptExecutor) driver2;
+//		executor13.executeScript("arguments[2].click();", elem13);
+//		Thread.sleep(1000);
+//	    
+//		WebElement elem14 = driver2.findElement(By.xpath("//option[normalize-space()='QC']"));
+//	    JavascriptExecutor executor14 = (JavascriptExecutor) driver2;
+//		executor14.executeScript("arguments[2].click();", elem14);
+//	    
+//		WebElement elem15 = driver2.findElement(By.xpath("//a[normalize-space()='fr']"));
+//	    JavascriptExecutor executor15 = (JavascriptExecutor) driver2;
+//		executor15.executeScript("arguments[2].click();", elem15);
+//	    
+////	    WebElement alert = driver2.findElement(By.xpath("//a[@class='mz-btn mz-btn--primary mz-btn--white']"));
+////	    
+////	    try {alert.click();
+////	    }
+////	    catch (Exception a) {
+////	    	throw (a); }
+////	    
+//	   
+//	    WebElement elem16 = driver2.findElement(By.xpath("//div[@class='mz-tabs mz-bg--FFFFFF mz-tabs-jelly js-processed']//a[2]"));
+//	    JavascriptExecutor executor16 = (JavascriptExecutor) driver2;
+//		executor16.executeScript("arguments[2].click();", elem16);
+//	    
+////		WebElement elem17 = driver2.findElement(By.xpath("//div[@class='mz-container-flex active']//button[3]"));
+////	    JavascriptExecutor executor17 = (JavascriptExecutor) driver2;
+////		executor17.executeScript("arguments[0].click();", elem17);
+////	    
+//	    // 11) Open B&P with selected province and fr 
+//	    
+//		WebElement elem18 = driver2.findElement(By.xpath("//div[@class='mz-container-flex active']//a[@class='mz-btn mz-btn--primary mz-btn--red mz-360-color-pickers__cta']"));
+//	    JavascriptExecutor executor18 = (JavascriptExecutor) driver2;
+//		executor18.executeScript("arguments[2].click();", elem18);
+//	    Thread.sleep(1000);
+//	    
+// WebElement alert2 = driver2.findElement(By.xpath("//a[@class='mz-btn mz-btn--primary mz-btn--white']"));
+//	    
+//	    try {alert2.click();
+//	    }
+//	    catch (Exception a) {
+//	    	throw (a); }
+//	    
 //	    Thread.sleep(2000);
-//	    driver2.findElement(By.xpath("//div[@class='mz-pricing__container']//button[@type='button']")).click();
-//	    Thread.sleep(1000);
-//	    driver2.findElement(By.xpath("//div[@class='mz-pricing__container']//button[@type='button']")).click();
-//	    Thread.sleep(4000);
-//	    driver.findElement(By.xpath("//div[@class='mz-pricing__container']//button[@type='button']")).click();
-//	    Thread.sleep(2000);
-//	    driver.findElement(By.xpath("//div[@class='mz-pricing__container']//button[@type='button']")).click();
-//	    Thread.sleep(1000);
-//	    driver.findElement(By.xpath("//div[@class='mz-pricing__container']//button[@type='button']")).click();
-//	    Thread.sleep(1000);
-//	    driver.findElement(By.xpath("(//span[@class='wheel-card__content'])[4]")).click();
-//	    Thread.sleep(1000);
-//	    driver.findElement(By.xpath("//div[@class='mz-pricing__container']//button[@type='button']")).click();
-//	    Thread.sleep(1000);
-//	    driver.findElement(By.xpath("//div[@class='mz-pricing__container']//button[@type='button']")).click();
+//	    WebElement elem19 = driver2.findElement(By.xpath("//div[@class='mz-package-page__content-right right-container']//div[2]//div[3]//button[1]"));
+//	    JavascriptExecutor executor19 = (JavascriptExecutor) driver2;
+//		executor19.executeScript("arguments[0].click();", elem19);
+//		
+//        Thread.sleep(2000);
+//        WebElement elem20 = driver2.findElement(By.xpath("//div[@class='mz-pricing__container']//button[@type='button']"));
+//        JavascriptExecutor executor20 = (JavascriptExecutor) driver2;
+//		executor20.executeScript("arguments[0].click();", elem20);
+//		
+//        Thread.sleep(1000);
+//        WebElement elem21 = driver2.findElement(By.xpath("//div[@class='mz-pricing__container']//button[@type='button']"));
+//        JavascriptExecutor executor21 = (JavascriptExecutor) driver2;
+//		executor21.executeScript("arguments[0].click();", elem21);
+//		
+//        Thread.sleep(1000);
+//        WebElement elem22 = driver2.findElement(By.xpath("//div[@class='mz-pricing__container']//button[@type='button']"));
+//        JavascriptExecutor executor22 = (JavascriptExecutor) driver2;
+//		executor22.executeScript("arguments[0].click();", elem22);
+//		
+//        Thread.sleep(1000);
+//        WebElement elem23 = driver2.findElement(By.xpath("//div[@class='mz-pricing__container']//button[@type='button']"));
+//        JavascriptExecutor executor23 = (JavascriptExecutor) driver2;
+//		executor23.executeScript("arguments[0].click();", elem23);
+//        
+//        WebElement Frprice = driver2.findElement(By.xpath(("//span[@class='mmz-cahs-options__price'][normalize-space()='30 503,50 $']")));
+//        
+//        String actualfrprice = Frprice.getText();
+//       // System.out.println("Prices" +actualfrprice);
+//	    String expectedfrprice = "30 503,50 $";
 //	    
-	  
-//	    driver.findElement(By.xpath("//div[contains(@class,'mz-pricing__container')]//button[contains(@type,'button')]")).click();
+//	    System.out.println("Prices are matching for FR balance:" +actualfrprice.equalsIgnoreCase(expectedfrprice));
+//	   
 //	    
-//	    driver.findElement(By.xpath("//div[contains(@class,'mz-financial--finance')]//button[contains(@type,'button')]")).click();
+//	    driver2.close();
+//	  }
 //	    
-//	    driver.findElement(By.xpath("//span[normalize-space()='Continue to Scotiabank']")).click();
+//	   // driver2.findElement(By.xpath("(//button)[3]")).click();
 //	    
-//	    Thread.sleep(3000);
+////	    driver2.findElement(By.xpath("//div[@class='mz-package-page__content-right right-container']//div[2]//div[3]//button[1]")).click();
+////	    Thread.sleep(2000);
+////	    driver2.findElement(By.xpath("//div[@class='mz-pricing__container']//button[@type='button']")).click();
+////	    Thread.sleep(1000);
+////	    driver2.findElement(By.xpath("//div[@class='mz-pricing__container']//button[@type='button']")).click();
+////	    Thread.sleep(4000);
+////	    driver.findElement(By.xpath("//div[@class='mz-pricing__container']//button[@type='button']")).click();
+////	    Thread.sleep(2000);
+////	    driver.findElement(By.xpath("//div[@class='mz-pricing__container']//button[@type='button']")).click();
+////	    Thread.sleep(1000);
+////	    driver.findElement(By.xpath("//div[@class='mz-pricing__container']//button[@type='button']")).click();
+////	    Thread.sleep(1000);
+////	    driver.findElement(By.xpath("(//span[@class='wheel-card__content'])[4]")).click();
+////	    Thread.sleep(1000);
+////	    driver.findElement(By.xpath("//div[@class='mz-pricing__container']//button[@type='button']")).click();
+////	    Thread.sleep(1000);
+////	    driver.findElement(By.xpath("//div[@class='mz-pricing__container']//button[@type='button']")).click();
+////	    
+//	  
+////	    driver.findElement(By.xpath("//div[contains(@class,'mz-pricing__container')]//button[contains(@type,'button')]")).click();
+////	    
+////	    driver.findElement(By.xpath("//div[contains(@class,'mz-financial--finance')]//button[contains(@type,'button')]")).click();
+////	    
+////	    driver.findElement(By.xpath("//span[normalize-space()='Continue to Scotiabank']")).click();
+////	    
+////	    Thread.sleep(3000);
+////	    
+////	    WebElement bns = driver.findElement(By.xpath("//div[contains(text(),'Get approved for your Mazda auto loan in under 20 ')]"));
+////	    
+////	    System.out.println("BNS site is opening:" +bns.isDisplayed());
+////	    
+//////	    Thread.sleep(5000);
+////	    
+////	    driver.findElement(By.xpath("/html/body/div/div/div[2]/div/div[1]/div/div[2]/div/div[1]/div/div[3]/svg/path")).click();
+////	    
+////		WebElement bns = driver.findElement(By.xpath("//p[normalize-space()='$701.93 Monthly']"));
+////		
+////		String monthlyonbns = bns.getText();
+////		
+////		System.out.println("Prices are matching:" +monthlyonbns.equalsIgnoreCase("$701.92 Monthly"));
+////		
+////	    
 //	    
-//	    WebElement bns = driver.findElement(By.xpath("//div[contains(text(),'Get approved for your Mazda auto loan in under 20 ')]"));
 //	    
-//	    System.out.println("BNS site is opening:" +bns.isDisplayed());
 //	    
-////	    Thread.sleep(5000);
 //	    
-//	    driver.findElement(By.xpath("/html/body/div/div/div[2]/div/div[1]/div/div[2]/div/div[1]/div/div[3]/svg/path")).click();
 //	    
-//		WebElement bns = driver.findElement(By.xpath("//p[normalize-space()='$701.93 Monthly']"));
-//		
-//		String monthlyonbns = bns.getText();
-//		
-//		System.out.println("Prices are matching:" +monthlyonbns.equalsIgnoreCase("$701.92 Monthly"));
-//		
 //	    
-	    
-	    
-	    
-	    
-	    
-	    
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		//		String Head = "PREDICTIVE TECHNOLOGY THAT" ;
-//		
-//		if
-//		(Heading.equals(Head));
-//
-//		{
-//		System.out.println("CTA is working correctly");}
-//		
-
-
-		
- }
-		
-	//	driver.findElement(By.xpath("//h6[normalize-space()='OUR SUSTAINABILITY PROMISE']")).click();
-		
-//		Thread.sleep(1000);
-//		
-//		WebElement Image = driver.findElement(By.xpath("//div[@class='h1 text--white']"));
-//		
-//		System.out.println("Display status of Image:"+Image.isDisplayed());
-//		
-//		// 5) Go back to previous page
-//		
-//		driver.navigate().back();
-//		
-//		// 6) Find element and check if it is being displayed (present in dom tree)
-//		
-//		WebElement Image2 = driver.findElement(By.xpath("//video[@class='lazy']"));
-//		
-//		System.out.println("Display status of Image2:"+Image2.isDisplayed());
-//		
-//		Thread.sleep(1000);
-//		
-//		driver.get("https://mazda.ca/en/vehicles/cx-50/");
-//		
-//		Thread.sleep(3000);
-//		
-//		WebElement Image3 = driver.findElement(By.xpath("//div[@data-id='connected_services_video']//video[@class='lazy']"));
-//		
-//		System.out.println("Display status of Image3:"+Image3.isDisplayed());
-//		
-//		driver.findElement(By.xpath("//span[normalize-space()='BUILD YOURS']")).click();
-//		
-//		WebElement Image4 = driver.findElement(By.xpath("//div[@class='mz-collapse mz-collapse-selected']//div[@class='mz-collapse__button']"));
-//		
-//		System.out.println("Display status of Image4:"+Image4.isDisplayed());
-//		
-//		//driver.findElement(By.xpath(//a[contains(@class,'mz-btn mz-btn--secondary')]//span[contains(text(),'BUILD YOURS')])).click();
-//		
-//		driver.findElement(By.xpath("//div[@class='mz-pricing__container']//button[@type='button']")).click();
-//		
-//		driver.findElement(By.xpath("//div[@class='mz-pricing__container']//button[@type='button']")).click();
-//		
-//		Thread.sleep(1000);
-//		
-//		driver.findElement(By.xpath("//button[@class='mz-btn mz-btn--primary mz-btn--red']//span[@class='mz-link-icon-positon--right'][normalize-space()='Next: Colour']")).click();
-//		
-//		driver.findElement(By.xpath("//span[normalize-space()='Machine Grey Metallic']")).click();
-//		
-//		driver.findElement(By.xpath("//button[@class='mz-btn mz-btn--primary mz-btn--red']//span[@class='mz-link-icon-positon--right'][normalize-space()='Next: Wheels']")).click();
-//		
-//		driver.findElement(By.xpath("//span[normalize-space()='M012 17\" Matte Gunmetal Alloy Wheel Package']")).click();
-//		
-//		driver.findElement(By.xpath("//button[@class='mz-btn mz-btn--primary mz-btn--red']//span[@class='mz-link-icon-positon--right'][normalize-space()='Next: Accessories']")).click();
-//		
-//		//driver.findElement(By.xpath("//body[1]/div[4]/div[1]/div[1]/div[2]/div[3]/div[1]/div[1]/div[2]/button[1]")).click();
-//		
-//		driver.findElement(By.xpath("//div[@class='mz-pricing__container']//button[@type='button']")).click();
-//		
-//		WebElement Test = driver.findElement(By.xpath("//span[@class='mmz-cahs-options__price'][normalize-space()='$41,847.50']"));
-//		
-//		String expecteddata= "41,847.50";
-//		
-//		String actualdata = Test.getText();
-//		
-//		if (actualdata.equalsIgnoreCase(expecteddata));
-//		{
-//			System.out.print("results matched");
-//		} 
-//		
-//		driver.findElement(By.xpath("//option[normalize-space()='QC']")).click();
-//		
-//		driver.findElement(By.xpath("//a[normalize-space()='fr']")).click();
-//		
-//		driver.findElement(By.xpath("//body/div[@id='root']/div[@class='App mzBuildandPrice']/div[@class='App-container']/div[@class='wrapper']/div[@class='mz-vehicles mz-container']/div[@class='mz-tabs js-processed']/div[@class='mz-tabs__content']/div[3]/div[1]")).click();
 //		
 //		
-//	
 //		
-//			
-//		}
 //		
-//	}
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		//		String Head = "PREDICTIVE TECHNOLOGY THAT" ;
+////		
+////		if
+////		(Heading.equals(Head));
+////
+////		{
+////		System.out.println("CTA is working correctly");}
+////		
 //
 //
+//		
+// }
+//		
+//	//	driver.findElement(By.xpath("//h6[normalize-space()='OUR SUSTAINABILITY PROMISE']")).click();
+//		
+////		Thread.sleep(1000);
+////		
+////		WebElement Image = driver.findElement(By.xpath("//div[@class='h1 text--white']"));
+////		
+////		System.out.println("Display status of Image:"+Image.isDisplayed());
+////		
+////		// 5) Go back to previous page
+////		
+////		driver.navigate().back();
+////		
+////		// 6) Find element and check if it is being displayed (present in dom tree)
+////		
+////		WebElement Image2 = driver.findElement(By.xpath("//video[@class='lazy']"));
+////		
+////		System.out.println("Display status of Image2:"+Image2.isDisplayed());
+////		
+////		Thread.sleep(1000);
+////		
+////		driver.get("https://mazda.ca/en/vehicles/cx-50/");
+////		
+////		Thread.sleep(3000);
+////		
+////		WebElement Image3 = driver.findElement(By.xpath("//div[@data-id='connected_services_video']//video[@class='lazy']"));
+////		
+////		System.out.println("Display status of Image3:"+Image3.isDisplayed());
+////		
+////		driver.findElement(By.xpath("//span[normalize-space()='BUILD YOURS']")).click();
+////		
+////		WebElement Image4 = driver.findElement(By.xpath("//div[@class='mz-collapse mz-collapse-selected']//div[@class='mz-collapse__button']"));
+////		
+////		System.out.println("Display status of Image4:"+Image4.isDisplayed());
+////		
+////		//driver.findElement(By.xpath(//a[contains(@class,'mz-btn mz-btn--secondary')]//span[contains(text(),'BUILD YOURS')])).click();
+////		
+////		driver.findElement(By.xpath("//div[@class='mz-pricing__container']//button[@type='button']")).click();
+////		
+////		driver.findElement(By.xpath("//div[@class='mz-pricing__container']//button[@type='button']")).click();
+////		
+////		Thread.sleep(1000);
+////		
+////		driver.findElement(By.xpath("//button[@class='mz-btn mz-btn--primary mz-btn--red']//span[@class='mz-link-icon-positon--right'][normalize-space()='Next: Colour']")).click();
+////		
+////		driver.findElement(By.xpath("//span[normalize-space()='Machine Grey Metallic']")).click();
+////		
+////		driver.findElement(By.xpath("//button[@class='mz-btn mz-btn--primary mz-btn--red']//span[@class='mz-link-icon-positon--right'][normalize-space()='Next: Wheels']")).click();
+////		
+////		driver.findElement(By.xpath("//span[normalize-space()='M012 17\" Matte Gunmetal Alloy Wheel Package']")).click();
+////		
+////		driver.findElement(By.xpath("//button[@class='mz-btn mz-btn--primary mz-btn--red']//span[@class='mz-link-icon-positon--right'][normalize-space()='Next: Accessories']")).click();
+////		
+////		//driver.findElement(By.xpath("//body[1]/div[4]/div[1]/div[1]/div[2]/div[3]/div[1]/div[1]/div[2]/button[1]")).click();
+////		
+////		driver.findElement(By.xpath("//div[@class='mz-pricing__container']//button[@type='button']")).click();
+////		
+////		WebElement Test = driver.findElement(By.xpath("//span[@class='mmz-cahs-options__price'][normalize-space()='$41,847.50']"));
+////		
+////		String expecteddata= "41,847.50";
+////		
+////		String actualdata = Test.getText();
+////		
+////		if (actualdata.equalsIgnoreCase(expecteddata));
+////		{
+////			System.out.print("results matched");
+////		} 
+////		
+////		driver.findElement(By.xpath("//option[normalize-space()='QC']")).click();
+////		
+////		driver.findElement(By.xpath("//a[normalize-space()='fr']")).click();
+////		
+////		driver.findElement(By.xpath("//body/div[@id='root']/div[@class='App mzBuildandPrice']/div[@class='App-container']/div[@class='wrapper']/div[@class='mz-vehicles mz-container']/div[@class='mz-tabs js-processed']/div[@class='mz-tabs__content']/div[3]/div[1]")).click();
+////		
+////		
+////	
+////		
+////			
+////		}
+////		
+////	}
+////
+////
