@@ -217,7 +217,9 @@ public void firsttest() throws Throwable {
 		
 		driver.findElement(By.xpath("//input[@class='base down-input']")).sendKeys("2000");
 		
-		driver.findElement(By.xpath("//div[@class='mz-price-payment__loyalty']//div[@class='mz-price-payment__checkbox']")).click();
+		WebElement elem11 = driver.findElement(By.xpath("//div[@class='mz-price-payment__loyalty']//div[@class='mz-price-payment__checkbox']"));
+		JavascriptExecutor executor11 = (JavascriptExecutor) driver;
+		executor10.executeScript("arguments[0].click();", elem11);
 		
 		WebElement balance = driver.findElement(By.xpath("//span[normalize-space()='$41,286.61']"));
 		
@@ -256,13 +258,21 @@ public void firsttest() throws Throwable {
 	   
 	    driver2.get("https://www.mazda.ca/en/vehicles/mazda3-sport/");
 	    
-	    driver2.findElement(By.xpath("//a[@class='mz-btn mz-btn--primary mz-btn--white']")).click();
+	    WebElement elem12 = driver2.findElement(By.xpath("//a[@class='mz-btn mz-btn--primary mz-btn--white']"));
+	    JavascriptExecutor executor12 = (JavascriptExecutor) driver;
+		executor10.executeScript("arguments[0].click();", elem12);
 	    
-	    driver2.findElement(By.xpath("//select[@name='province']")).click();
+		WebElement elem13 = driver2.findElement(By.xpath("//select[@name='province']"));
+	    JavascriptExecutor executor13 = (JavascriptExecutor) driver;
+		executor10.executeScript("arguments[0].click();", elem13);
 	    
-	    driver2.findElement(By.xpath("//option[normalize-space()='QC']")).click();
+		WebElement elem14 = driver2.findElement(By.xpath("//option[normalize-space()='QC']"));
+	    JavascriptExecutor executor14 = (JavascriptExecutor) driver;
+		executor10.executeScript("arguments[0].click();", elem14);
 	    
-	    driver2.findElement(By.xpath("//a[normalize-space()='fr']")).click();
+		WebElement elem15 = driver2.findElement(By.xpath("//a[normalize-space()='fr']"));
+	    JavascriptExecutor executor15 = (JavascriptExecutor) driver;
+		executor10.executeScript("arguments[0].click();", elem15);
 	    
 	    WebElement alert = driver2.findElement(By.xpath("//a[@class='mz-btn mz-btn--primary mz-btn--white']"));
 	    
@@ -274,13 +284,19 @@ public void firsttest() throws Throwable {
 	   
 	    	
 	    
-	    driver2.findElement(By.xpath("//body/div/div/div/div[1]/a[2]")).click();
+	    WebElement elem16 = driver2.findElement(By.xpath("//body/div/div/div/div[1]/a[2]"));
+	    JavascriptExecutor executor16 = (JavascriptExecutor) driver;
+		executor10.executeScript("arguments[0].click();", elem16);
 	    
-	    driver2.findElement(By.xpath("//div[@class='mz-container-flex active']//button[3]")).click();
+		WebElement elem17 = driver2.findElement(By.xpath("//div[@class='mz-container-flex active']//button[3]"));
+	    JavascriptExecutor executor17 = (JavascriptExecutor) driver;
+		executor10.executeScript("arguments[0].click();", elem17);
 	    
 	    // 11) Open B&P with selected province and fr 
 	    
-	    driver2.findElement(By.xpath("//div[@class='mz-container-flex active']//a[@class='mz-btn mz-btn--primary mz-btn--red mz-360-color-pickers__cta']")).click();
+		WebElement elem18 = driver2.findElement(By.xpath("//div[@class='mz-container-flex active']//a[@class='mz-btn mz-btn--primary mz-btn--red mz-360-color-pickers__cta']"));
+	    JavascriptExecutor executor18 = (JavascriptExecutor) driver;
+		executor10.executeScript("arguments[0].click();", elem18);
 	    Thread.sleep(1000);
 	    
  WebElement alert2 = driver2.findElement(By.xpath("//a[@class='mz-btn mz-btn--primary mz-btn--white']"));
@@ -291,15 +307,29 @@ public void firsttest() throws Throwable {
 	    	throw (a); }
 	    
 	    Thread.sleep(2000);
-	    driver2.findElement(By.xpath("//div[@class='mz-package-page__content-right right-container']//div[2]//div[3]//button[1]")).click();
+	    WebElement elem19 = driver2.findElement(By.xpath("//div[@class='mz-package-page__content-right right-container']//div[2]//div[3]//button[1]"));
+	    JavascriptExecutor executor19 = (JavascriptExecutor) driver;
+		executor10.executeScript("arguments[0].click();", elem19);
+		
         Thread.sleep(2000);
-        driver2.findElement(By.xpath("//div[@class='mz-pricing__container']//button[@type='button']")).click();
+        WebElement elem20 = driver2.findElement(By.xpath("//div[@class='mz-pricing__container']//button[@type='button']"));
+        JavascriptExecutor executor20 = (JavascriptExecutor) driver;
+		executor10.executeScript("arguments[0].click();", elem20);
+		
         Thread.sleep(1000);
-        driver2.findElement(By.xpath("//div[@class='mz-pricing__container']//button[@type='button']")).click();
+        WebElement elem21 = driver2.findElement(By.xpath("//div[@class='mz-pricing__container']//button[@type='button']"));
+        JavascriptExecutor executor21 = (JavascriptExecutor) driver;
+		executor10.executeScript("arguments[0].click();", elem21);
+		
         Thread.sleep(1000);
-        driver2.findElement(By.xpath("//div[@class='mz-pricing__container']//button[@type='button']")).click();
+        WebElement elem22 = driver2.findElement(By.xpath("//div[@class='mz-pricing__container']//button[@type='button']"));
+        JavascriptExecutor executor22 = (JavascriptExecutor) driver;
+		executor10.executeScript("arguments[0].click();", elem22);
+		
         Thread.sleep(1000);
-        driver2.findElement(By.xpath("//div[@class='mz-pricing__container']//button[@type='button']")).click();
+        WebElement elem23 = driver2.findElement(By.xpath("//div[@class='mz-pricing__container']//button[@type='button']"));
+        JavascriptExecutor executor23 = (JavascriptExecutor) driver;
+		executor10.executeScript("arguments[0].click();", elem23);
         
         WebElement Frprice = driver2.findElement(By.xpath(("//span[@class='mmz-cahs-options__price'][normalize-space()='29 992,50 $']")));
         
